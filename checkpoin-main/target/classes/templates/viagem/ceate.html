@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Viagem</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="/">Fiap</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#mynavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="mynavbar">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item"><a class="nav-link" href="/viagem">Viagem</a>
+					</li>
+				</ul>
+				<form class="d-flex">
+					<div style="float: right;">
+						<p class="text-white" th:text="${data_decolagem}"></p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</nav>
+	<div class="container mt-5">
+		<h2 class="text-center">Cadastrar viagem</h2>
+  <form method="post" action="/viagem/create">
+
+  <label for="dataDecolagem">Data de decolagem:</label>
+  <input type="text" id="data_decolagem" name="data_decolagem"><br>
+
+  <label for="duracaoEstadia">Duração de dias de estadia em Marte:</label>
+  <input type="number" id="dias_estadia" name="dias_estadia"><br>
+
+  <label for="assentosDisponiveis">Quantidade de assentos disponíveis na nave:</label>
+  <input type="number" id="quantidade_assento" name="quantidade_assento" step="3"><br>
+
+  <label for="modeloNave">Nome do modelo da nave:</label>
+  <input type="text" id="modelo_nave" name="modelo_nave" pattern="[a-zA-Z]{4}-\d{4}"><br>
+
+  <label for="primeiroComandante">Nome do Primeiro comandante:</label>
+  <input type="text" id="nome_primeirocomandante" name="nome_primeirocomandante"><br>
+
+  <label for="matriculaPrimeiroComandante">Matrícula interespacial do Primeiro comandante:</label>
+  <input type="text" id="matricula_primeirocomandante" name="matricula_primeirocomandante" pattern="[a-zA-Z]{3}-\d{4}-[a-zA-Z]\d[a-zA-Z]"><br>
+
+  <label for="segundoComandante">Nome do Segundo comandante:</label>
+  <input type="text" id="nome_segundocomandante" name="nome_segundocomandante"><br>
+
+  <label for="matriculaSegundoComandante">Matrícula interespacial do Segundo comandante:</label>
+  <input type="text" id="matricula_segundocomandante" name="matricula_segundocomandante" pattern="[a-zA-Z]{3}-\d{4}-[a-zA-Z]\d[a-zA-Z]"><br>
+
+  <input type="submit" value="Enviar">
+</form>
+	</div>
+</body>
+
+</html>
